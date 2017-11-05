@@ -24,16 +24,16 @@ public class EventsourcingConsumer {
 		SpringApplication.run(EventsourcingConsumer.class, args);
 	}
 
-//	@Bean
-//	public CommandLineRunner commandLineRunner() {
-//		return new CommandLineRunner() {
-//			@Override
-//			public void run(String... strings) throws Exception {
-//				final List<Map<String, Object>> maps = jdbcTemplate.queryForList("select * from tickets;");
-//				maps.stream().forEach(map -> logger.info(map.toString()));
-//			}
-//		};
-//	}
+	@Bean
+	public CommandLineRunner commandLineRunner() {
+		return new CommandLineRunner() {
+			@Override
+			public void run(String... strings) throws Exception {
+				final List<Map<String, Object>> maps = jdbcTemplate.queryForList("select * from tickets");
+				maps.stream().forEach(map -> logger.info(map.toString()));
+			}
+		};
+	}
 
 	@Bean
 	public CommandLineRunner commandLineRunner2() {

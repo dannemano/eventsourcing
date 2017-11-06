@@ -32,7 +32,7 @@ public class MainListener implements ConsumerSeekAware {
 
     private static final Logger logger = LoggerFactory.getLogger(MainListener.class);
 
-    @KafkaListener(topics = "dbot")
+    @KafkaListener(topics = "balance")
     public void process(@Payload String content,
                         @Header(KafkaHeaders.OFFSET) long offset) throws IOException {
         final AccountBalanceEvent event = objectMapper.readValue(content, AccountBalanceEvent.class);

@@ -22,6 +22,7 @@
         <module>eventconsumer</module>
         <module>eventproducer</module>
         <module>eventmodel</module>
+        <module>kafkaprocessor</module>
     </modules>
 
 	<dependencies>

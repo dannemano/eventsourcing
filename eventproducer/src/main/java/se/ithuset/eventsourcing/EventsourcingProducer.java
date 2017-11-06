@@ -31,7 +31,7 @@ public class EventsourcingProducer {
 			@Override
 			public void run(String... strings) throws Exception {
 				AccountBalanceEvent event = new AccountBalanceEvent(1L, new BigDecimal(100));
-				kafkaTemplate.send("dbot",objectMapper.writeValueAsString(event));
+				kafkaTemplate.send("balance",objectMapper.writeValueAsString(event));
 			}
 		};
 	}
